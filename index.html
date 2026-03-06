@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<!--ページの設定を日本語にする-->
+<html lang="ja">
+    <!--文字コードはUTF-8でブラウザのタブにTodoアプリと入れる-->
+    <head>
+        <meta charset="UTF-8">
+        <title>Todoアプリ</title>
+    </head>
+    <!--実際にwebページに載せていく部分-->
+    <body>
+        <!--タイトル表示-->
+        <h1>Todo</h1>
+        <!--入力欄の作成-->
+        <input id="todoInput" type="text" placeholder="やることを入力"/>
+        <!--時間を入れる場所の作成カレンダーも出る-->
+        <input id="deadlineInput" type="datetime-local"/>
+        <!--追加ボタン-->
+        <button id="addBtn">追加</button>
+        <!--リストの箱を作る-->
+        <ul id="todoList"></ul>
+
+        <!--main.jsを読み込んで実行-->
+        <script src="main.js"></script>
+    </body>
+</html> 
