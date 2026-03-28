@@ -18,12 +18,10 @@ app.get("/", (req, res) => {
 const { Pool } = require("pg");
 
 const pool = new Pool({
-  host: "localhost",
-  user: "postgres",
-  password: "kake00252",
-  database: "postgres",
-  port: 5432
+  connectionString: process.env.DATABASE_URL,
+  ssl: { rejectUnauthorized: false }
 });
+
 
 // フロントから送られてきたtodosを受け取る
 app.post("/todos", async (req, res) => {
