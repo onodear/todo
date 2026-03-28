@@ -8,7 +8,7 @@ btn.addEventListener('click', async()=>{
     const time = document.getElementById("deadlineInput").value;
     
     //サーバーにデータを格納するからサーバーに今から送ることを伝える
-    await fetch("http://localhost:3000/todos",{
+    await fetch("https://todo-y86v.onrender.com/todos",{
         //それは新しくデータを作る処理だということを伝える
         method: "POST",
         //今から送るデータのコンテンツのタイプはjsonファイルですよと伝える
@@ -28,7 +28,7 @@ btn.addEventListener('click', async()=>{
 //
 async function loadTodos() {
     //resにサーバーのtodoの一覧を入れるためにリクエストを送る
-    const res = await fetch("http://localhost:3000/todos");
+    const res = await fetch("https://todo-y86v.onrender.com/todos");
     //サーバーから返ってきたjsonファイルをjsの配列に変換する
     const todos = await res.json();
     //index.htmlの<ul>を取得する
@@ -50,7 +50,7 @@ async function loadTodos() {
         // 削除ボタンを押したときの動作
         delbtn.addEventListener("click", async () => {
             //どのデータを消すかを指定
-            await fetch(`http://localhost:3000/todos/${todo.id}`, {
+            await fetch(`https://todo-y86v.onrender.com/todos/${todo.id}`, {
                 //指定したデータを消去する
                 method: "DELETE"
             });
